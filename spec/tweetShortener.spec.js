@@ -42,4 +42,14 @@ describe('tweetShortener', function() {
     expect(tweetShortener.selectiveShortener(over140Too).length).toBeLessThan(over140Too.length);
     expect(tweetShortener.selectiveShortener(under140Too).length).toEqual(under140Too.length);
   });
+
+  it("truncates tweets over 140 characters after shortening", function(){
+    var longTweet = "GUISEEEEE this is so fun! I'm tweeting for you guys and this tweet is SOOOO long it's gonna be way more than you would think twitter can handle, so shorten it up you know what I mean? I just can never tell how long to keep typing!";
+    expect(shortenedTruncator(longTweet).length).toEqual(140);
+  });
+
+  it("keeps shortened tweets at their original lengths", function(){
+    var shortTweet = "I like short tweets and I cannot lie";
+    expect(shortenedTruncator(shortTweet).length).toEqual(shortTweet.length);
+  });
 });
