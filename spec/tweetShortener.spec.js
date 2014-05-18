@@ -45,7 +45,7 @@ describe('tweetShortener', function() {
 
   it("truncates tweets over 140 characters after shortening", function(){
     var longTweet = "GUISEEEEE this is so fun! I'm tweeting for you guys and this tweet is SOOOO long it's gonna be way more than you would think twitter can handle, so shorten it up you know what I mean? I just can never tell how long to keep typing!";
-    var shortednedTweet = shortenedTruncator(longTweet);
+    var shortenedTweet = tweetShortener.shortenedTruncator(longTweet);
     expect(shortenedTweet.length).toEqual(140);
     // checking if the string ends in '...'
     expect(shortenedTweet.indexOf('...', shortenedTweet.length - '...'.length)).not.toEqual(-1);
@@ -53,6 +53,6 @@ describe('tweetShortener', function() {
 
   it("keeps shortened tweets at their original lengths", function(){
     var shortTweet = "I like short tweets and I cannot lie";
-    expect(shortenedTruncator(shortTweet).length).toEqual(shortTweet.length);
+    expect(tweetShortener.shortenedTruncator(shortTweet).length).toEqual(shortTweet.length);
   });
 });
