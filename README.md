@@ -30,7 +30,7 @@ var tweetShortener = {
 };
 ```
 
-This would look something like this in ruby:
+This would look something like this in Ruby:
 
 ```ruby
 module TweetShortener
